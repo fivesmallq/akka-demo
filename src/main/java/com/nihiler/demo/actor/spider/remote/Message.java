@@ -1,6 +1,6 @@
 package com.nihiler.demo.actor.spider.remote;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
 
@@ -19,7 +19,7 @@ public class Message implements Serializable {
     }
 
     public String toString() {
-        return ToStringBuilder.reflectionToString(this);
+        return MoreObjects.toStringHelper(this).add("data", getData()).toString();
     }
 
 }
